@@ -399,7 +399,6 @@
       answerRevealed = false;
       renderCurrentQuestion();
       renderDrawerList();
-      window.scrollTo({ top: 120, behavior: 'smooth' });
     }
   }
 
@@ -495,7 +494,6 @@
         renderCurrentQuestion();
         renderDrawerList();
         toggleDrawer(false);
-        window.scrollTo({ top: 120, behavior: 'smooth' });
       };
     });
   }

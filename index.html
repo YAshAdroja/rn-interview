@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="author" content="Yash Adroja">
+  <meta name="description" content="130+ Senior React Native & Mobile Engineering Interview Questions and Answers with Architecture, Real-World Scenarios, and Follow-ups. Curated and Created by Yash Adroja.">
+  <meta name="keywords" content="React Native, Mobile Architecture, Interview Prep, JavaScript, TurboModules, Fabric, Redux, Zustand, Yash Adroja">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="React Native Interview Prep Hub | Created by Yash Adroja">
+  <meta property="og:description" content="130+ In-depth React Native, Mobile Architecture, State Management, and STAR questions. Curated by Yash Adroja.">
+
+  <title>React Native Interview Prep Hub | Created by Yash Adroja</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top App Navigation Bar -->
+  <header class="top-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="brand-icon" aria-hidden="true">⚛️</div>
+        <div class="brand-title">
+          <div class="brand-logo">Interview <span>Hub</span></div>
+          <div class="brand-badge">
+            <span>React Native</span>
+            <span>·</span>
+            <span class="author-pill" title="Project Creator">By Yash Adroja</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn icon-btn" id="guideBtn" title="Welcome Guide & Instructions">
+          <span>📖</span> <span class="hide-mobile">Guide</span>
+        </button>
+        <button class="btn icon-btn" id="shortcutsBtn" title="Keyboard Shortcuts (?)">
+          <span>⌨️</span> <span class="hide-mobile">Shortcuts</span>
+        </button>
+        <button class="btn" id="menuToggleBtn" aria-expanded="false" aria-controls="sideDrawer" title="Browse Question Index (M)">
+          <span>☰</span> <span>Questions</span>
+        </button>
+        <button class="btn" id="themeToggleBtn" title="Toggle Dark/Light Mode (T)">
+          ☾ Dark
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="main-layout">
+    
+    <!-- Hero / Headline -->
+    <section class="hero-banner">
+      <div class="hero-tagline">
+        <span>🚀 130+ Curated Interview Questions</span>
+      </div>
+      <h1 class="hero-title">React Native & Mobile Engineering Interview Hub</h1>
+      <p class="hero-subtitle">
+        Architecture, Core React, Offline-First Systems, Performance, and STAR Leadership. Created by <strong>Yash Adroja</strong>.
+      </p>
+    </section>
+
+    <!-- Category Selector Tiles -->
+    <nav class="category-tiles" id="categoryTiles" aria-label="Question Categories">
+      <!-- Injected via JavaScript -->
+    </nav>
+
+    <!-- Filters & Search Toolbar -->
+    <section class="filter-bar">
+      <div class="search-and-select">
+        <div class="search-wrapper">
+          <span class="search-icon" aria-hidden="true">🔎</span>
+          <input 
+            type="search" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search 130+ questions, concepts, code, or keywords... (Press / to search)" 
+            aria-label="Search questions"
+          >
+          <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="categorySelect" class="category-select" aria-label="Filter subcategory topic">
+            <option value="">All Topics</option>
+          </select>
+          <span class="select-chevron" aria-hidden="true">▼</span>
+        </div>
+      </div>
+
+      <!-- Mode & Filter Pills Toolbar -->
+      <div class="mode-toolbar">
+        <div class="filter-pills">
+          <button class="btn pill-toggle diff-pill active-filter" data-diff="All">All Levels</button>
+          <button class="btn pill-toggle diff-pill" data-diff="Easy">🟢 Easy</button>
+          <button class="btn pill-toggle diff-pill" data-diff="Medium">🟡 Medium</button>
+          <button class="btn pill-toggle diff-pill" data-diff="Hard">🔴 Hard</button>
+          <button class="btn pill-toggle" id="starredFilterBtn" title="Filter by Starred questions">⭐ Starred (0)</button>
+        </div>
+
+        <div class="mode-actions">
+          <button class="btn" id="studyModeBtn" title="Toggle Flashcard/Practice Mode: hide answers until clicked">
+            📖 Read Mode
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress & Status Row -->
+    <section class="meta-status-bar">
+      <div class="meta-status-row">
+        <strong id="positionCounter">Loading questions...</strong>
+        <span>Use <span class="kbd">←</span> <span class="kbd">→</span> keys to navigate</span>
+      </div>
+      <div class="progress-container" aria-hidden="true">
+        <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+      </div>
+    </section>
+
+    <!-- Main Question & Answer Card -->
+    <article class="card-wrapper">
+      <div class="question-card" id="questionCard" aria-live="polite">
+        <!-- Injected via JavaScript -->
+      </div>
+    </article>
+
+    <!-- Keyboard Shortcuts Bar -->
+    <aside class="keyboard-hint-bar" aria-label="Keyboard navigation hint">
+      <span><span class="kbd">←</span> Previous</span>
+      <span><span class="kbd">→</span> Next</span>
+      <span><span class="kbd">Space</span> Toggle Answer</span>
+      <span><span class="kbd">B</span> Star / Bookmark</span>
+      <span><span class="kbd">R</span> Random</span>
+      <span><span class="kbd">/</span> Search</span>
+      <span><span class="kbd">?</span> All Shortcuts</span>
+    </aside>
+
+  </main>
+
+  <!-- Side Drawer Overlay (Question Navigator) -->
+  <div class="modal-shade" id="modalShade" aria-hidden="true"></div>
+
+  <aside class="side-drawer" id="sideDrawer" aria-label="Question Directory Drawer">
+    <div class="drawer-header">
+      <div>
+        <strong>Question Index</strong>
+        <div class="drawer-meta-tags" id="drawerTotalCount">0 questions</div>
+      </div>
+      <button class="btn icon-btn" id="drawerCloseBtn" aria-label="Close question drawer">✕</button>
+    </div>
+    <div class="drawer-list" id="drawerQuestionsList">
+      <!-- Injected via JavaScript -->
+    </div>
+  </aside>
+
+  <!-- Welcome & Onboarding Guide Modal -->
+  <section class="modal-dialog" id="onboardingModal" role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <h2 class="modal-title" id="guideTitle">Welcome to Interview Hub! 🚀</h2>
+        <span class="modal-subtitle">Curated & Created by <strong>Yash Adroja</strong></span>
+      </div>
+      <button class="modal-close-btn" id="closeGuideBtn" aria-label="Close guide modal">✕</button>
+    </div>
+
+    <div class="onboarding-list">
+      <div class="onboarding-item">
+        <span class="onboarding-icon">📱</span>
+        <div class="onboarding-text">
+          <strong>130+ Senior Mobile & React Native Questions</strong>
+          <p>Covers New Architecture (Fabric, TurboModules, JSI, Codegen), Offline-First sync, State, Performance, CI/CD, and STAR leadership.</p>
+        </div>
+      </div>
+
+      <div class="onboarding-item">
+        <span class="onboarding-icon">🎯</span>
+        <div class="onboarding-text">
+          <strong>Practice Mode (Flashcards)</strong>
+          <p>Switch on Practice Mode to hide answers. Test your recall and explanation out loud before clicking "Reveal Answer"!</p>
+        </div>
+      </div>
+
+      <div class="onboarding-item">
+        <span class="onboarding-icon">⭐</span>
+        <div class="onboarding-text">
+          <strong>Bookmarks & Starred Questions</strong>
+          <p>Click the Star button (or press <span class="kbd">B</span>) on tough questions to review them quickly before your interview.</p>
+        </div>
+      </div>
+
+      <div class="onboarding-item">
+        <span class="onboarding-icon">💼</span>
+        <div class="onboarding-text">
+          <strong>Real-World Production Scenarios & Follow-ups</strong>
+          <p>Every question includes practical code / healthcare / production examples and the exact follow-up questions interviewers will ask.</p>
+        </div>
+      </div>
+
+      <div class="onboarding-item">
+        <span class="onboarding-icon">⌨️</span>
+        <div class="onboarding-text">
+          <strong>Lightning Fast Keyboard Navigation</strong>
+          <p>Use <span class="kbd">←</span> and <span class="kbd">→</span> to jump questions, <span class="kbd">Space</span> to toggle answers, and <span class="kbd">?</span> for cheatsheet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <label class="checkbox-label">
+        <input type="checkbox" id="dontShowAgainCheck"> Don't show this welcome guide again
+      </label>
+      <button class="btn primary" id="startPracticingBtn">Start Practicing →</button>
+    </div>
+  </section>
+
+  <!-- Keyboard Shortcuts Modal -->
+  <section class="modal-dialog" id="shortcutsModal" role="dialog" aria-modal="true" aria-labelledby="shortcutsTitle">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <h2 class="modal-title" id="shortcutsTitle">Keyboard Shortcuts</h2>
+        <span class="modal-subtitle">Navigate seamlessly without touching your mouse</span>
+      </div>
+      <button class="modal-close-btn" id="closeShortcutsBtn" aria-label="Close shortcuts modal">✕</button>
+    </div>
+
+    <div class="shortcuts-grid">
+      <div class="shortcut-row">
+        <span>Next Question</span>
+        <span><span class="kbd">→</span> or <span class="kbd">L</span></span>
+      </div>
+      <div class="shortcut-row">
+        <span>Previous Question</span>
+        <span><span class="kbd">←</span> or <span class="kbd">H</span></span>
+      </div>
+      <div class="shortcut-row">
+        <span>Toggle Answer</span>
+        <span class="kbd">Space</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Star / Bookmark</span>
+        <span class="kbd">B</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Random Question</span>
+        <span class="kbd">R</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Questions Drawer</span>
+        <span class="kbd">M</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Focus Search Bar</span>
+        <span class="kbd">/</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Toggle Dark/Light Mode</span>
+        <span class="kbd">T</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Open Shortcuts</span>
+        <span class="kbd">?</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Close Overlay / Modal</span>
+        <span class="kbd">Esc</span>
+      </div>
+    </div>
+
+    <div class="modal-footer" style="justify-content: flex-end;">
+      <button class="btn primary" onclick="document.getElementById('shortcutsModal').classList.remove('visible'); document.getElementById('modalShade').classList.remove('visible');">Got it</button>
+    </div>
+  </section>
+
+  <!-- Toast Notification Overlay -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Footer Section -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div class="footer-author">
+        Created & Curated by <span>Yash Adroja</span>
+      </div>
+      <p>
+        The definitive interview preparation handbook for React Native, Mobile Architecture & Senior Leadership.
+      </p>
+      <div class="footer-links">
+        <span>Works 100% offline</span>
+        <span>·</span>
+        <span>Zero dependencies</span>
+        <span>·</span>
+        <span>GitHub Pages Ready</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

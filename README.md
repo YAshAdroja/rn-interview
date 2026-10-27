@@ -2,7 +2,9 @@
 
 > A comprehensive, interactive, and developer-focused preparation platform for mastering **React Native**, **Mobile Architecture**, **State Management**, and **Senior Engineering Leadership** interviews.
 
-**Created & Curated by [Yash Adroja](https://github.com/)**
+**Created & Curated by [Yash Adroja](https://github.com/YAshAdroja)**
+[![GitHub Stars](https://img.shields.io/github/stars/YAshAdroja/rn-interview?style=social)](https://github.com/YAshAdroja/rn-interview)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?logo=github)](https://yashadroja.github.io/rn-interview/)
 
 ---
 
@@ -154,22 +156,22 @@ git commit -m "feat: complete React Native Interview Prep Hub with modern UI, st
 Copy the commands shown on GitHub:
 ```bash
 # Add your GitHub repository remote
-git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/<REPO_NAME>.git
+git remote add origin https://github.com/YAshAdroja/rn-interview.git
 
 # Push to main branch
 git push -u origin main
 ```
 
 ### Step 4: Enable Free GitHub Pages Hosting
-1. Go to your repository on GitHub.
+1. Go to [https://github.com/YAshAdroja/rn-interview](https://github.com/YAshAdroja/rn-interview).
 2. Click **Settings** (gear icon) → **Pages** (in the left sidebar).
 3. Under **Build and deployment**:
    - **Source**: `Deploy from a branch`
    - **Branch**: Select `main` and `/ (root)` folder.
 4. Click **Save**.
-5. Wait ~60 seconds. Your project will be live at:
+5. Your project will be live at:
    ```
-   https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/
+   https://yashadroja.github.io/rn-interview/
    ```
 
 ---
